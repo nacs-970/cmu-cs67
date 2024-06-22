@@ -1,0 +1,18 @@
+// Atithep Thepkij (Tun)
+// 670510681
+// HW01_1
+// 204111 Sec 002
+
+penColour('#228b22');
+for (var count = 0; count < 4; count++) {
+  turnRight(90);
+  moveForward(100);
+}
+turnLeft(90);
+moveForward(50);
+turnLeft(90);
+moveForward(100);
+for (var count2 = 0; count2 < 3; count2++) {
+  turnRight(90);
+  moveForward(100);
+}
