@@ -3,7 +3,9 @@
 # 670510681
 # HW03_2
 # 204111 Sec 002
-num = int(input())
+
+#abs() = abosulute number
+num = abs(int(input()))
 k = int(input())
 def kth_digit(num,k):
 
@@ -19,4 +21,6 @@ def kth_digit(num,k):
     num = num//10**k%10
     return num
 
-print(kth_digit(num,k))
+
+if __name__ == "__main__":
+    print(kth_digit(num,k))

@@ -4,7 +4,7 @@
 # HW03_3
 # 204111 Sec 002
 
-num = int(input())
+num = abs(int(input()))
 k = int(input())
 val = int(input())
 
@@ -27,4 +27,5 @@ def set_kth_digit(num,k,val):
     num += val
     return num
 
-print(set_kth_digit(num,k,val))
+if __name__ == "__main__":
+    print(set_kth_digit(num,k,val))
