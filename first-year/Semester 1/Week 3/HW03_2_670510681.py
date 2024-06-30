@@ -5,9 +5,11 @@
 # 204111 Sec 002
 
 #abs() = abosulute number
-num = abs(int(input()))
-k = int(input())
-def kth_digit(num,k):
+def main():
+    num,k = int(input()),int(input())
+    print(kth_digit(num,k))
+
+def kth_digit(num:int,k:int) -> int:
 
     # number floor division with 10^k 
     # mod % 10
@@ -17,10 +19,9 @@ def kth_digit(num,k):
     # ex : 
     # 789 // 10^0 = 789
     # 789 % 10 = 9
-
+    num = abs(num)
     num = num//10**k%10
     return num
 
-
 if __name__ == "__main__":
-    print(kth_digit(num,k))
+    main()

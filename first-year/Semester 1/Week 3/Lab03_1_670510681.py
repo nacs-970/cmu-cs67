@@ -10,16 +10,18 @@
 
 from math import pi as pi
 
-def find_r_from_surface_area(area):
+def find_r_from_surface_area(area:float) -> float:
     r = (area/(4*pi))**0.5
     return r
 
-def sphere_volume(r):
+def sphere_volume(r:float) -> float:
     area = (4/3)*pi*(r**3)
     return area
 
-area = float(input("input surface area: "))
-r = find_r_from_surface_area(area)
+def main():
+    area = float(input("input surface area: "))
+    r = find_r_from_surface_area(area)
+    print(f"volume = {sphere_volume(r):.2f}")
 
 if __name__ == "__main__":
-    print(f"volume = {sphere_volume(r):.2f}")
+    main()
