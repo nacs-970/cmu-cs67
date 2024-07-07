@@ -19,17 +19,6 @@ def my_min_mid_max(a:int,b:int,c:int) -> None:
         max = b
         min = a
 
-    if c < min:
-        mid = min
-        min = c
-    else:
-        mid = c
-
-    if c > max:
-        mid = max
-        max = c
-    else:
-        mid = c
 
     print(f"min = {min}")
     print(f"mid = {mid}")
