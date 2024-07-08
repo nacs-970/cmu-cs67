@@ -12,13 +12,18 @@ def main():
     my_min_mid_max(a,b,c)
 
 def my_min_mid_max(a:int,b:int,c:int) -> None:
-    if a > b:
-        max = a
-        min = b
-    else:
-        max = b
-        min = a
+    min,max = a,a
+    if b<min:
+        min=b
+    if c<min:
+        min=c
 
+    if b>max:
+        max=b
+    if c>max:
+        max=c
+
+    mid = (a+b+c)-min-max
 
     print(f"min = {min}")
     print(f"mid = {mid}")

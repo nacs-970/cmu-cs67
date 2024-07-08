@@ -39,6 +39,7 @@ def is_overlapped(l1:float,t1:float,w1:float,h1:float,
 
 def test():
     assert is_overlapped(10, 10, 100, 150, 50, 100, 150, 200) == True
+    assert is_overlapped(10,10,90,90,150,90,50,90) == False
     print("Ok!")
 
 if __name__ == "__main__":
