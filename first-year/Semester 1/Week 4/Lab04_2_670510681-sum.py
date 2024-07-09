@@ -4,7 +4,6 @@
 # Lab04_2
 # 204111 Sec 002
 
-
 def main():
     a = int(input())
     b = int(input())
@@ -12,22 +11,21 @@ def main():
     my_min_mid_max(a,b,c)
 
 def my_min_mid_max(a:int,b:int,c:int) -> None:
-    min,max = a,a
-    if b<min:
-        min=b
-    if c<min:
-        min=c
+    if a > b:
+        max_ = a
+        mid_ = b
+    else:
+        max_ = b
+        mid_ = a
+    if c>max_:
+      max_=c
+    else:
+      mid_ = c
+    min_ = (a+b+c) - max_ - mid_
 
-    if b>max:
-        max=b
-    if c>max:
-        max=c
-
-    mid = (a+b+c)-min-max
-
-    print(f"min = {min}")
+    print(f"min = {min_}")
     print(f"mid = {mid}")
-    print(f"max = {max}")
+    print(f"max = {max_}")
 
 if __name__ == "__main__":
     main()

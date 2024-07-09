@@ -7,8 +7,8 @@
 # AB = x, AC = 2x,BC = ?
 # c^2 = a^2 + b^2
 # c^2 = x^2 + (2x)^2
-# c = (5x^2)^0.5 = sqrt(5)
-# https://www.youtube.com/watch?v=JQlIV2IvvyY
+# c = (5x^2)^0.5 = sqrt(5)x
+# https://youtu.be/JQlIV2IvvyY?si=K_ia-3cdINcBhuTN
 
 def rectangle_area(x:float) -> float:
     ab = x

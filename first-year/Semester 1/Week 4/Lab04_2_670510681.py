@@ -9,7 +9,7 @@ def main():
     a = int(input())
     b = int(input())
     c = int(input())
-    my_min_mid_max(a,b,c)
+    my_min_mid_max_mini(a,b,c)
 
 def my_min_mid_max(a:int,b:int,c:int) -> None:
     if a > b:
@@ -47,6 +47,30 @@ def my_min_mid_max(a:int,b:int,c:int) -> None:
                 max = b
                 mid = a
                 min = c
+
+    print(f"min = {min}")
+    print(f"mid = {mid}")
+    print(f"max = {max}")
+    
+def my_min_mid_max_mini(a:int,b:int,c:int) -> None:
+    # shorten by P'ta
+    if a > b:
+        max = a
+        mid = b
+    else:
+        max = b
+        mid = a
+
+    if c > max:
+        min=mid
+        mid=max
+        max=c
+
+    elif c < mid:
+        min = c 
+    else:
+        min=mid
+        mid=c
 
     print(f"min = {min}")
     print(f"mid = {mid}")
