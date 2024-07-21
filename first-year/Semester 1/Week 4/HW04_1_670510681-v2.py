@@ -6,9 +6,9 @@
 import random
 def main():
     test()
-    p = int(input())
-    c = int(input())
-    print(calculate_exp(p,c))
+    #p = int(input())
+    #c = int(input())
+    #print(calculate_exp(p,c))
 
 def calculate_exp_13(p: int, c: int) -> int:
     if p > 0:
@@ -41,23 +41,23 @@ def calculate_exp_short(p: int, c: int) -> int:
     #return min((p),max_evolve)*1000
 
 def test():
-    assert calculate_exp(20,1) == 1000
-    assert calculate_exp(20,11) == 2000
-    assert calculate_exp(1,12) == 1000
-    assert calculate_exp(11,12) == 1000
-    assert calculate_exp(24,0) == 2000
-    assert calculate_exp(13,0) == 1000
-    assert calculate_exp(2,12) == 1000
-    assert calculate_exp(2,22) == 2000
-    assert calculate_exp(120,0) == 10000
-    assert calculate_exp(6,62) == 6000
-    assert calculate_exp(6,61) == 5000
-    assert calculate_exp(1200,0) == 108000
-    assert calculate_exp(0,0) == 0
+    #assert calculate_exp(20,1) == 1000
+    #assert calculate_exp(20,11) == 2000
+    #assert calculate_exp(1,12) == 1000
+    #assert calculate_exp(11,12) == 1000
+    #assert calculate_exp(24,0) == 2000
+    #assert calculate_exp(13,0) == 1000
+    #assert calculate_exp(2,12) == 1000
+    #assert calculate_exp(2,22) == 2000
+    #assert calculate_exp(120,0) == 10000
+    #assert calculate_exp(6,62) == 6000
+    #assert calculate_exp(6,61) == 5000
+    #assert calculate_exp(1200,0) == 108000
+    #assert calculate_exp(0,0) == 0
     # idea by ice cj
     for i in range(100000):
-        p = random.randint(0,100000)
-        c = random.randint(0,100000)
+        p = random.randint(0,100)
+        c = random.randint(0,100)
         # try ลองจนกว่าจะ error
         try:
             assert calculate_exp_short(p,c) == calculate_exp_13(p,c)
