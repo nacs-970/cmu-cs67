@@ -12,7 +12,7 @@ def uniform (line:str) -> str:
     #low = len(list(filter(check_lower,line2))) # filter(function,array)
     #high = len(list(filter(check_upper,line2)))
 
-    low = len(list(filter(lambda x: x>= 'a',line2))) # filter(function,array)
+    low = len(list(filter(lambda x: x>= 'a',line2))) # filter(function,array) | count lower in array
     high = len(list(filter(lambda x: x >= 'A' and x < 'a',line2))) 
 
     if low == high:

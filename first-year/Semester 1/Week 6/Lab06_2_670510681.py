@@ -13,9 +13,9 @@ def dest_rotate_list(list_a: list[int],n:int) -> None:
         #print(list_a[len_-rotate:])  # [2:] [3,4,5]
         #print(list_a[:len_-rotate])  # [:2] [1,2]
 
-        list_a.extend(list_a[len_-rotate:])
-        list_a.extend(list_a[:len_-rotate])
-        del list_a[:len_]
+        list_a.extend(list_a[len_-rotate:]) # [1,2,3,4,5,3,4,5]
+        list_a.extend(list_a[:len_-rotate]) # [1,2,3,4,5,3,4,5,1,2]
+        del list_a[:len_] # remove front 0 to len_
 
         #list_a.insert(0,list_a[-1])
         #del list_a[-1]
@@ -27,9 +27,9 @@ def dest_rotate_list(list_a: list[int],n:int) -> None:
         #print(list_a[rotate:]) #[3:]
         #print(list_a[:rotate]) #[:3]
 
-        list_a.extend(list_a[rotate:])
-        list_a.extend(list_a[:rotate])
-        del list_a[:len_]
+        list_a.extend(list_a[rotate:]) # [1,2,3,4,5,4,5]
+        list_a.extend(list_a[:rotate]) # [1,2,3,4,5,4,5,3,2,1]
+        del list_a[:len_] # remove front 0 to len_
 
         #list_a.append(list_a[0])
         #del list_a[0]
