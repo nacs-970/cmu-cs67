@@ -14,14 +14,12 @@ def main():
 
 
 def decode_helper(code_table, str_index):  # รับรหัส 1 ตัว แล้วคืน 1 อักขระที่ถูกต้อง
-    if str_index == '.':
-        return "\n"
+    if str_index == '.': return "\n"
 
-    elif int(str_index) > len(code_table)-1 or int(str_index) < (-1)*(len(code_table)): # check out of range for code_table for both positive and negative int
+    elif int(str_index) > len(code_table)-1 or int(str_index) < -(len(code_table)): # check out of range for code_table for both positive and negative int
         return "_"
     #elif int(str_index) <= len(code_table):
-    else:
-        return code_table[int(str_index)]
+    else: return code_table[int(str_index)] # return char from code_table
 
 
 def decode(code_table, text):

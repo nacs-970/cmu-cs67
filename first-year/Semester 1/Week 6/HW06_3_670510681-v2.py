@@ -5,20 +5,12 @@
 # 204111 Sec 002
 
 def moving_average(list_x:list[float],win_size:int) -> list[float]:
-
     if len(list_x) < win_size or win_size <= 0: return []
     if win_size == 1: return list_x
 
     #index_ = list(map(lambda x:list_x.index(x),list_x)) # [0,1,2,3,4]
-    index_ = list(range(len(list_x))) # get index
-    avg = list(map(lambda x:list_x[x:x+win_size],index_)) # make list in list of win_size step
-    #print(avg)
-    
-    del avg[-(win_size-1):] # remove unwanted list
-    
-    index_ = list(range(len(avg)))
-    avg = list(map(lambda x: sum(avg[x])/win_size,index_))
-    #avg = list(map(lambda x:,list_x))
+    index_ = list(range(len(list_x)-(win_size-1))) # make an index and remove unwanted list
+    avg = list(map(lambda x:(sum(list_x[x:x+win_size]))/win_size,index_)) # make list of sum with size of win_size
     return avg
 
 def test():

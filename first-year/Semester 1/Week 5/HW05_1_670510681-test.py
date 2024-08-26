@@ -61,7 +61,7 @@ def test():
         try:
             assert substitute_once_2(text,a,b) == substitute_once(text,a,b)
         except:
-            raise b
+            raise 
             print(" | ",text," | ",a," | ",b," | ")
             print(f"expect:  {substitute_once(text,a,b)}  got:  {substitute_once_2(text,a,b)}")
             return 0

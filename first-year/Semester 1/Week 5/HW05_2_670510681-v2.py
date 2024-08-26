@@ -18,35 +18,23 @@ def roman_numeral(n: int) -> str:
     
     roman = thousand*'M'.join([roman,back])
     if hundred < 5:
-        if hundred == 4: 
-            roman = "CD".join([roman,back])
-        else:
-            roman = f"{hundred*'C'}".join([roman,back])
+        if hundred == 4: roman = "CD".join([roman,back])
+        else: roman = f"{hundred*'C'}".join([roman,back])
     else:
-        if hundred < 9 and hundred >= 5:
-            roman = f"D{(hundred-5)*'C'}".join([roman,back])
-        else:
-            roman = 'CM'.join([roman,back])
+        if hundred < 9 and hundred >= 5: roman = f"D{(hundred-5)*'C'}".join([roman,back])
+        else: roman = 'CM'.join([roman,back])
     if ten < 5:
-        if ten == 4:
-            roman = 'XL'.join([roman,back])
-        else:
-            roman = f"{ten*'X'}".join([roman,back])
+        if ten == 4: roman = 'XL'.join([roman,back])
+        else: roman = f"{ten*'X'}".join([roman,back])
     else:
-        if ten < 9 and ten >= 5:
-            roman = f"L{(ten-5)*'X'}".join([roman,back])
-        else:
-            roman = 'XC'.join([roman,back])
+        if ten < 9 and ten >= 5: roman = f"L{(ten-5)*'X'}".join([roman,back])
+        else: roman = 'XC'.join([roman,back])
     if one < 5:
-        if one == 4:
-            roman = 'IV'.join([roman,back])
-        else:
-            roman = f"{one*'I'}".join([roman,back])
+        if one == 4: roman = 'IV'.join([roman,back])
+        else: roman = f"{one*'I'}".join([roman,back])
     else:
-        if one < 9 and one >= 5:
-            roman = f"V{(one-5)*'I'}".join([roman,back])
-        else:
-            roman = "IX".join([roman,back])
+        if one < 9 and one >= 5: roman = f"V{(one-5)*'I'}".join([roman,back])
+        else: roman = "IX".join([roman,back])
     return roman
 
 def test():

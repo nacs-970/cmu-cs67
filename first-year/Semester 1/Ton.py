@@ -1,0 +1,1 @@
+def reverse_digit(n,power):

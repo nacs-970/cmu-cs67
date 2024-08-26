@@ -6,12 +6,12 @@
 
 def triangle(n:int) -> str:
     num = list(range(1,n-1))
-    struct = list(map(lambda x: ((("*")+("."*(x+(x-1)))+("*"))),num))
+    body = list(map(lambda x: ((("*")+("."*(x+(x-1)))+("*"))),num)) # map use with array
     end_ = [(n-1)*("* ")+("*")] # "(*\ *\ *\ )*"
-    struct =  list("*")+struct+end_
+    struct =  list("*")+body+end_ # add head, body and end_
     #print(struct)
     # add newline at the end too
-    struct = '\n'.join(struct) + "\n"
+    struct = '\n'.join(struct) + "\n" # join list "," with "\n"
     return struct
 
 def test_triangle():
@@ -32,6 +32,6 @@ def test_triangle():
 
     assert triangle(3) == T3
     assert triangle(7) == T7
-    print("OK")
+    print("•∆•")
 if __name__ == "__main__":
     test_triangle()

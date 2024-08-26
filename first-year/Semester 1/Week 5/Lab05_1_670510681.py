@@ -12,12 +12,9 @@ def palindrome_without(text:str,c:str) -> bool:
     c = c.lower()
     text = text.replace(c,"")
     text = text.replace(" ","") # "a a a" != "aaa" in python
-    if text =="":
-        return False
-    elif text == text[::-1]:
-        return True
-    else:
-        return False
+    if text =="": return False
+    elif text == text[::-1]: return True
+    else: return False
 
 def test():
     assert palindrome_without("Banana","b") == True
