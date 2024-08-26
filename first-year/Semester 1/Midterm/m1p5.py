@@ -1,7 +1,8 @@
 import math
 def median(list_a:list[int]) -> float:
     len_ = len(list_a)
-    mid = math.floor(len_/2)
+    list_a = sorted(list_a)
+    mid = len_//2
     if len_%2 == 1: return list_a[mid]
     return (list_a[mid] + list_a[mid-1])/2
     
