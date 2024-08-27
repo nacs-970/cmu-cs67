@@ -11,6 +11,7 @@ def find_mode(score_list:list[int]) -> list[int]:
     index_ = range(len(nodupe))
 
     count_ = list(map(lambda x: score_list.count(x),nodupe))
+
     def max_(list_):
         num = score_list.count(list_[0])
         max_c = max(count_)

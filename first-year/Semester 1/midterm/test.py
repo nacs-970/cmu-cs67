@@ -1,17 +1,17 @@
 import random
 import string
+
 def same_letters(str1: str, str2: str) -> bool:
-    str1,str2 = str1.lower(),str2.lower()
-    str1 = list(filter(lambda x: x.isalpha(), str1))
-    str2 = list(filter(lambda x: x.isalpha(), str2))
+    str1 = list(filter(lambda x: x.isalpha(), str1.lower()))
+    str2 = list(filter(lambda x: x.isalpha(), str2.lower()))
 
     def check(list_a,list_b):
         if list_a == []:return True
+        #print(list_a[0])
         if list_a[0] in list_b:
-            list_b.remove(list_a[0])
             return check(list_a[1:],list_b)
         else: return False
-    return check(str1,str2)
+    return check(str1,str2) and check(str2,str2)
 
 def same_letters2(str1: str, str2: str) -> bool:
     str1,str2 = str1.lower(),str2.lower()
@@ -27,9 +27,9 @@ def same_letters2(str1: str, str2: str) -> bool:
     return True
 
 def test():
-    for i in range(10000):
+    for i in range(20000):
         t1,t2 = '',''
-        for i in range(random.randint(1,50)):
+        for i in range(random.randint(1,100)):
             #t1 += random.choice(string.printable)
             #t2 += random.choice(string.printable)
             t1 += random.choice(string.ascii_letters)

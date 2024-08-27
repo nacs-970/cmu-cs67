@@ -7,6 +7,10 @@ def find_mode(score_list:list[int]) -> list[int]:
     
     index_ = range(len(nodupe))
     count_ = list(map(lambda x: score_list.count(x),nodupe))
-    ans = list(map(lambda x: nodupe[x] if count_[x] == max(count_) else 'x',index_))
-    ans = list(filter(lambda x: x != 'x',ans))
+    ans = list(filter(lambda x: score_list.count(x) == max(count_), nodupe))
     return ans
+
+#print(find_mode([50,50,60,60]))
+#print(find_mode([50,60]))
+#print(find_mode([50,60,60]))
+
