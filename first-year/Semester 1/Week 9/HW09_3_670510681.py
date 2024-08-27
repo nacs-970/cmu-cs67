@@ -3,8 +3,9 @@
 # 670510681
 # HW09_3
 # 204111 Sec 002
+
 def unmask_id(masked_id:str) -> list[str]:
-    mask_id = masked_id
+#    mask_id = masked_id
 
     def check_digit(list_):
         list_ = list_[:-1]
@@ -17,8 +18,9 @@ def unmask_id(masked_id:str) -> list[str]:
     count_ = masked_id.count('*')
     list_ = masked_id.replace('*','{}')
     range_ = list(map(lambda x: str(x).zfill(count_),range(10**count_)))
-    list_ = list(map(lambda x: list_.format(*x),range_)) # * is unpack
+    list_ = list(map(lambda x: list_.format(*x),range_)) # * is unpack; ex '00' -> 0,0
     list_ = list(filter(lambda x: x[0]!='0',list_)) # filter 0
+    print(list_)
     list_ = list(filter(lambda x: x == check_digit(x),list_))
     return list_
 
@@ -78,13 +80,13 @@ def unmask_id(masked_id:str) -> list[str]:
 
 
 if __name__ == '__main__':
-    #print(unmask_id('1-2345-67890-12-4'))
     print(unmask_id('1-2345-67890-12-*'))
-    print(unmask_id('*-2345-67890-12-*'))
-    print(unmask_id('1-2345-67890-1*-*'))
-    print(unmask_id('1-2345-67890-**-*'))
-    print(unmask_id('1-2345-6789*-**-*'))
-    print(unmask_id('1-2345-67***-**-*'))
-    print(unmask_id('1-2345-67*90-1*-*'))
-    print(unmask_id('1-2345-6**90-1*-*'))
-    print(unmask_id('1-2345-67**0-12-1'))
+    #print(unmask_id('1-2345-67890-12-*'))
+    #print(unmask_id('*-2345-67890-12-*'))
+    #print(unmask_id('1-2345-67890-1*-*'))
+    #print(unmask_id('1-2345-67890-**-*'))
+    #print(unmask_id('1-2345-6789*-**-*'))
+    #print(unmask_id('1-2345-67***-**-*'))
+    #print(unmask_id('1-2345-67*90-1*-*'))
+    #print(unmask_id('1-2345-6**90-1*-*'))
+    #print(unmask_id('1-2345-67**0-12-1'))
