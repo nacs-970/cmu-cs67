@@ -4,11 +4,13 @@
 # Lab09_1
 # 204111 Sec 002
 def patterned_message(message: str, pattern:str,n=0) -> None:
-    if not pattern:
+    if not pattern: # empty string is False; not(False)
         return 
 
     message = message.replace(' ','')
-    if n > len(message)-1: n = 0
+
+    n = n%len(message)
+    #if n > len(message)-1: n = 0
 
     if pattern[0] == '*':
         print(message[n],end='')
@@ -22,19 +24,25 @@ if __name__ == '__main__':
     **
     *
     '''
+    a = '******'
+    b = '''
+1
+2
+3
+'''
     #print(a[5]) #1-4 = '' , 5-7 = **\n
-    patterned_message("123", "** *** ** ** *")
+    #patterned_message("123", "** *** ** ** *")
     #patterned_message("123", "")
     #patterned_message("123", '''
 
     #''')
     #patterned_message("123", "*")
+    patterned_message(a,b)
     patterned_message("D and C",''' 
 *************** 
 ******   ****** 
 *************** 
 ''') 
-    print('############')
     patterned_message("Three Diamonds!",''' 
     *     *     * 
    ***   ***   *** 
