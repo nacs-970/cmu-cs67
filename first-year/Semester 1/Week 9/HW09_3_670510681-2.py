@@ -30,13 +30,13 @@ def unmask_id(masked_id:str) -> list[str]:
     return list_
 
 if __name__ == '__main__':
-    #print(unmask_id('1-2345-67890-12-4'))
-    #print(unmask_id('1-2345-67890-12-*'))
+    print(unmask_id('1-2345-67890-12-4'))
+    print(unmask_id('1-2345-67890-12-*'))
     print(unmask_id('*-2345-67890-1*-*'))
-    #print(unmask_id('1-2345-67890-1*-*'))
-    #print(unmask_id('1-2345-67890-**-*'))
-    #print(unmask_id('1-2345-6789*-**-*'))
-    #print(unmask_id('1-2345-67***-**-*'))
-    #print(unmask_id('1-2345-67*90-1*-*'))
-    #print(unmask_id('1-2345-6**90-1*-*'))
-    #print(unmask_id('1-2345-67**0-12-1'))
+    print(unmask_id('1-2345-67890-1*-*'))
+    print(unmask_id('1-2345-67890-**-*'))
+    print(unmask_id('1-2345-6789*-**-*'))
+    print(unmask_id('1-2345-67***-**-*'))
+    print(unmask_id('1-2345-67*90-1*-*'))
+    print(unmask_id('1-2345-6**90-1*-*'))
+    print(unmask_id('1-2345-67**0-12-1'))

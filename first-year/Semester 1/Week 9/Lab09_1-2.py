@@ -16,7 +16,7 @@ def patterned_message(message: str, pattern:str,n=0) -> None:
     #message = div_*message + message[:remainder]
     
     # compare
-    if len_p > len_m: message = len_p*message # เพราะใน .format(*message) .format จะเอาที่ตรงกับ {} น้อยสุด
+    if len_p > len_m: message = len_p*message # เพราะใน .format(*message) .format จะเอาที่ตรงกับ {} น้อยสุด คล้าย slicing เกิน
 
     print(pattern.format(*message))
 

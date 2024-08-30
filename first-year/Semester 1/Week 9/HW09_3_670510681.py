@@ -20,7 +20,6 @@ def unmask_id(masked_id:str) -> list[str]:
     range_ = list(map(lambda x: str(x).zfill(count_),range(10**count_)))
     list_ = list(map(lambda x: list_.format(*x),range_)) # * is unpack; ex '00' -> 0,0
     list_ = list(filter(lambda x: x[0]!='0',list_)) # filter 0
-    print(list_)
     list_ = list(filter(lambda x: x == check_digit(x),list_))
     return list_
 
@@ -80,7 +79,7 @@ def unmask_id(masked_id:str) -> list[str]:
 
 
 if __name__ == '__main__':
-    print(unmask_id('1-2345-67890-12-*'))
+    #print(unmask_id('1-2345-67890-12-*'))
     #print(unmask_id('1-2345-67890-12-*'))
     #print(unmask_id('*-2345-67890-12-*'))
     #print(unmask_id('1-2345-67890-1*-*'))
@@ -89,4 +88,5 @@ if __name__ == '__main__':
     #print(unmask_id('1-2345-67***-**-*'))
     #print(unmask_id('1-2345-67*90-1*-*'))
     #print(unmask_id('1-2345-6**90-1*-*'))
-    #print(unmask_id('1-2345-67**0-12-1'))
+    #print(unmask_id('7-318*3-*87775-2'))
+    print(unmask_id('2-3267-5*6712-55'))
