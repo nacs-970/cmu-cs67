@@ -14,7 +14,5 @@ def left_max(list_a:list[int]) -> list[int]:
     return [now] + left_max(list_a[1:])
 if __name__ == '__main__':
     print(left_max([2,8,1]))
-    print(left_max([-1,8,1]))
-    print(left_max([-1,-8,-1]))
     print(left_max([3,3,1,1,2,4]))
     print(left_max([-3,-33,-101,-1,2,-10000]))
