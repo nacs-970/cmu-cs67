@@ -6,7 +6,9 @@
 
 def eratosthenes(n:int,show_step:bool=False) -> list[int]:
     prime = 2
-    prime_list = [2]
+    prime_list = []
+    if n >= 2:
+        prime_list += [2]
 
     list_ = list(range(2,n+1))
     list_ = list(filter(lambda x: x%prime != 0,list_))
@@ -23,6 +25,5 @@ def eratosthenes(n:int,show_step:bool=False) -> list[int]:
     ans = prime_list+list_
     return ans
 if __name__ == "__main__":
-    n = 20
+    n = 1000
     print(eratosthenes(n))
-
