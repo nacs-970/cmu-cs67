@@ -26,5 +26,6 @@ def longest_digit_run(n: int) -> int:
 
 if __name__ == "__main__":
     n = 113377722
+    n = 1212
     print(longest_digit_run(n))
 
