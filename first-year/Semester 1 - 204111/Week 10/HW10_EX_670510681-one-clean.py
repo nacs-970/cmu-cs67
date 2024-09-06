@@ -4,29 +4,18 @@
 # HW10_EX
 # 204111 Sec 002
 
-cat_l = \
+cat = \
     ''' ／|、    |
 (°、。7   |
  |、 ~ヽ  |
  ᒐᒐ_f_ )ノ|
 __________|'''
-cat_r = \
-    '''| ／|、    
-|(°、。7   
-| |、 ~ヽ  
-| ᒐᒐ_f_ )ノ
-|__________'''
 
-cat_m = \
-    ''' ／|、     
-(°、。7    
- |、 ~ヽ   
- ᒐᒐ_f_ )ノ 
-__________ '''
-
-cat_m = list(cat_m.split("\n"))
-cat_l = list(cat_l.split("\n"))
-cat_r = list(cat_r.split("\n"))
+cat_m = list(cat.split("\n"))
+cat_m = list(map(lambda x: x[:-1],cat_m))
+cat_r = list(cat.split("\n"))
+cat_r = list(map(lambda x: "|"+x[:-1],cat_r))
+cat_l = list(cat.split("\n"))
 
 def cat_altar(n):
 
