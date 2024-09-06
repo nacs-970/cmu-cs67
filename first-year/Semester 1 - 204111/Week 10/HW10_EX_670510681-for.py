@@ -24,8 +24,8 @@ cat = list(map(lambda x: x[:-1],cat))
 def cat_altar(n):
     tmp = list(map(lambda x: ' '*(n-1)*11 + x ,cat))
     l = ['\n'.join(tmp)]
-    if n == 1:return ''.join(l)
-    for i in range(1,n):
+    #if n == 1:return ''.join(l)
+    for i in range(1,n): # 1,1 will not start for loop
         #print(" "*(n-i),end="") 
         #print(("*")*(2*i + 1))
         space_ = ' '*(n-1-i)*11
