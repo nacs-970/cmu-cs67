@@ -6,13 +6,9 @@
 
 def eratosthenes(n:int,show_step:bool=False) -> list[int]:
     prime = 2
-    prime_list = []
+    prime_list = [2]
 
-    if n < 2:
-        return []
-
-    list_ = list(range(2,n+1))
-    #list_ = list(filter(lambda x: x%prime != 0,list_))
+    list_ = list(filter(lambda x: x%prime != 0,range(2,n+1)))
     
     #while list_ != []:
     while prime**2 <= n: # when x can't divied others mean number is less than sqrt(x) mean x is prime
@@ -25,7 +21,6 @@ def eratosthenes(n:int,show_step:bool=False) -> list[int]:
     ans = prime_list+list_
     return ans
 if __name__ == "__main__":
-    n = 100
-    n = 2
+    n = 20
     print(eratosthenes(n,True))
-    #print(eratosthenes(int(input())))
+
