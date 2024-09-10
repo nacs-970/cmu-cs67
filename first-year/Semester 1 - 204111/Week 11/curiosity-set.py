@@ -54,7 +54,7 @@ print(s)
 
 print("---")
 import time
-n = 1000
+n = 10000000
 l = list(range(2,n+1,2))
 def count_member(c,n,set_=False):
     a = c 
