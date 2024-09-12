@@ -35,6 +35,6 @@ def arrival_sequences(l_lane: tuple[str], r_lane: tuple[str]) -> list[str]:
     
 
 if __name__ == "__main__":
-    l = 'A','B'
-    r = '1','2'
+    l = 'A','B','C'
+    r = '1','2','3'
     print(arrival_sequences(l,r))

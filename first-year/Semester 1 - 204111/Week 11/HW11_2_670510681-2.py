@@ -1,57 +1,60 @@
 #!/usr/bin/env python3
-# Atithep Thepkij(Tun)
+# Atithep Thepkij (Tun)
 # 670510681
 # HW11_2
 # 204111 Sec 002
+# TA P'Kla
 
+import time
 def split_and_merge(n:int) -> list[str]:
 
+    start = time.time()
 
-    def possibility(queue,sequence=[]):
+    def power_set(queue,sequence=()):
+        #print(queue,sequence)
         if not queue:
-            list_.append(sequence)
-        if queue:
+            return [sequence]
             # the result will same as lecture w11_a_lec1 page 16
-            possibility(queue[1:],sequence + [str(queue[0])])
-            possibility(queue[1:],sequence)
+        non_em = power_set(queue[1:],sequence + (str(queue[0]),))
+        em = power_set(queue[1:],sequence)
+        return non_em + em
 
+    bus = range(1,n+1)
+    set_ = power_set(bus)
+    l = set()
+    top = set_
+    bot = top[::-1]
 
-    bus = list(range(1,n+1))
-    list_ = []
+    # powerset is a way of bus wait in top lane
+    # so, reverse it to get bottom lane.
+    # and use arrivial sequence from Week 10
+    # to match the possibility 
+    # tldr; this problem isn't a permutation
 
-    possibility(bus)
+    def merge(top_l, bot_l,sequence=()):
+        #print(sequence)
 
-    print(list_)
+        if not top_l:
+            sequence += bot_l
+            l.add(">".join(sequence))
+            return
 
-    #for poss_add in list_[1:]:
-    #    # if poss_add.issubset(temp) or temp.issubset(poss_add)
-    #    if set(poss_add) <= set(poss) or set(poss) <= set(poss_add):
-    #        continue
-    #    if len(poss) + len(poss_add) > n or len(poss) + len(poss_add) < n:
-    #        continue
-    #    #print(poss,poss_add)
-    #    #if len(poss) + len(poss_add) == n:
-    #    ans.add(">".join(poss+poss_add))
-    return list(ans) , len(ans)
-    for poss in list_:
-
-        if len(poss) == n:
-            ans.add(">".join(poss))
-
-        else:
-            for poss_add in list_[1:]:
-
-
-
-
-        #else:
-        #    print(poss)
-        #    diff = set(base) - set(poss)
-        #    #diff -= set(poss)
-        #    #print(diff.union(set(poss)))
-        #    ans.add(">".join(diff.union(set(poss))))
-
-
+        if not bot_l:
+            sequence += top_l
+            l.add(">".join(sequence))
+            return 
+            #return [">".join(sequence)]
+        if top_l:
+            merge(top_l[1:],bot_l,sequence + (top_l[0],))
+        if bot_l:
+            merge(top_l,bot_l[1:],sequence + (bot_l[0],))
+    
+    for i in range(len(top)):
+        merge(top[i],bot[i])
+    return list(l)
 
 if __name__ == "__main__":
+    #split_and_merge(11)
+    print(split_and_merge(3))
     print(split_and_merge(4))
+    #print(split_and_merge(11))

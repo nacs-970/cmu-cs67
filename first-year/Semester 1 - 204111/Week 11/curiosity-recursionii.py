@@ -6,7 +6,7 @@ def fib(n,depth=0):
         result = fib(n-1,depth + 1) + fib(n-2,depth +1)
     print("  "*depth,"--> ",result,sep="")
     return result
-fib(4)
+fib(5) # 3:1 time, 2:2 times, 1:3 times, 0:2 times
 print("---")
 def fib_memoizing(n,table=None): # Top-Down Approach
     if not table:
