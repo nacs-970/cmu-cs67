@@ -4,19 +4,6 @@
 # HW11_EX
 # 204111 Sec 002
 
-# didn't use this function
-def update_index(str_,index_,step):
-    start = max(0,(index_ - step)+1)
-    #print(index_,str_[start:index_+1])
-    underscores_count = str_[start:index_ + 1].count("_")
-    index_ += underscores_count
-
-    if index_ > len(str_) - 1:
-        #index_ = index_ - (len(str_) - 1)
-        index_%=len(str_)
-
-    return index_
-
 def eeny_meeny(name_list: list[str], rhyme_len: int=4) -> str:
     # get all upper character index to dict
     upper_ = list(map(lambda x: len(x),name_list))
@@ -83,3 +70,4 @@ if __name__ == "__main__":
     assert eeny_meeny(['A','B','C','D']) == 'B'
     x = ['Chiquia', 'Rose', 'Tillie', 'Yettie']
     print(eeny_meeny(x))
+    print(eeny_meeny(['Tommy','Tom']))
