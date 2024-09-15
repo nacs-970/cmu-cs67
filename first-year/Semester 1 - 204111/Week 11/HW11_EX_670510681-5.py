@@ -5,6 +5,7 @@
 # 204111 Sec 002
 
 def eeny_meeny(name_list: list[str], rhyme_len: int=4) -> str:
+
     # get all upper character index to dict
     upper_ = list(map(lambda x: len(x),name_list))
 
@@ -31,17 +32,20 @@ def eeny_meeny(name_list: list[str], rhyme_len: int=4) -> str:
 
                 len_name =  len(dict_[index_])
                 name_list.remove(dict_[index_])
-                str_ = str_[:index_] +  ["_"] * len_name +str_[index_ + len_name:]
-                #str_ = str_[:index_] + str_[index_ + len_name:]
+                str_ = str_[:index_] + str_[index_ + len_name:] # remove the matching upper
 
+                # update dict to match the new str_
+                upper_ = list(map(lambda x: len(x),name_list))
+                dict_ = dict(map(lambda x: (sum(upper_[:x]),name_list[x]),range(len(upper_))))
+                
                 if len(name_list) == 1:
                     return name_list[0]
 
             else:
                 str_[index_] = "_"
+                index_ += 1
 
             # reset marked_index and continue
-            index_ += 1
             marked_index = 0 
 
         # if index_ isn't _ and marked_index != to remove 

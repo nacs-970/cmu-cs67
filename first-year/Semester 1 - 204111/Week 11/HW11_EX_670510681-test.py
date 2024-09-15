@@ -15,7 +15,7 @@ def eeny_meeny(name_list: list[str], rhyme_len: int=4) -> str:
 
     index_ = 0
     marked_index = 0
-    debug = False
+    debug = True
 
     while len(name_list) != 1:
 
@@ -67,8 +67,8 @@ a = ["Aaren","Aarika","Abagael","Abagail","Abbe","Abbey","Abbi","Abbie","Abby","
 def test():
     start = time.time()
     n = []
-    step = random.randint(4,10)
-    for i in range(random.randint(1,100)):
+    step = random.randint(4,999)
+    for i in range(random.randint(1,999)):
         name = random.choice(a)
         if [name] not in n:
             n += [name]
