@@ -23,8 +23,10 @@ def scramble(word):
 
         else:
             for i in range(len(word)):
+                if str_ + word[i] in ans and word[i] + str_ in ans:
+                    continue
                 permutation(word[:i] + word[i+1:], str_ + word[i])
-                permutation(word[:i] + word[i+1:], word[i] + str_ )
+                #permutation(word[:i] + word[i+1:], word[i] + str_ )
 
         return list(ans)
 
@@ -48,17 +50,26 @@ def scramble(word):
     #ans = permuation(word)
     #end = time.time() 
 
-    print(sorted(permutation(word)))
+    #print(sorted(permutation(word)))
     #print(f"{end - start:.07f}")
-    #return list(permuation(word))#,print(f"{time.time() - start:.07f}")
+    return print(sorted(permutation(word))),print(f"{time.time() - start:.07f}")
 
 
 if __name__ == "__main__":
-    scramble("1")
-    scramble("12")
-    scramble("123")
-    scramble("Cat")
-    scramble("bee")
-    scramble("bEe")
-    scramble("1234")
+    #scramble("1")
+    #scramble("12")
+    #scramble("123")
+    #scramble("Cat")
+    #scramble("bee")
+    #scramble("bEe")
+    #scramble("1234")
     #scramble("123456789AB")
+    scramble("111111110")
+    scramble("111111100")
+    scramble("111111100")
+    scramble("111111000")
+    scramble("111110000")
+    scramble("111100000")
+    scramble("111000000")
+    scramble("110000000")
+    scramble("100000000")
