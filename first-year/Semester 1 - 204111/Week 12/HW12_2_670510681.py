@@ -40,10 +40,12 @@ def total_value(treasure_type, treasures):
     if treasure_type not in treasures:
         return -1
 
-    for n in treasures[treasure_type]:
-        #print(n)
-        total += n[1]
-    
+    #for n in treasures[treasure_type]:
+         #print(n)
+    #    total += n[1]
+
+    total = sum(set(map(lambda x: x[1],treasures.get(treasure_type,0))))
+    #print(total) 
     return total
 
 if __name__ == '__main__':

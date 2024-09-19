@@ -28,8 +28,8 @@ def scramble(word):
     ans = permutation(word)
     ans = list(ans)
     end = time.time() 
-
-    return ans#,print(f"{end - start:.07f}")
+    #print(ans)
+    return ans,print(f"{end - start:.07f}")
     #return print(sorted(permutation(word))),print(f"{end - start:.07f}")
 
 if __name__ == "__main__":

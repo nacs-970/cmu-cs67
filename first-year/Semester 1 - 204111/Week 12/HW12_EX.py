@@ -18,6 +18,7 @@ def xmas_tree(n:int):
 
     if n == 1:
         ans = "\n".join(ans)
+        #print(ans)
         return ans
 
     body = []
@@ -29,6 +30,7 @@ def xmas_tree(n:int):
     
     ans = top + body + truck
     ans = "\n".join(ans)
+    #print(ans)
     return ans
 
 

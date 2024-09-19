@@ -16,7 +16,7 @@ def main():
         return 
 
     bomb = set()
-    max_ = 1000
+    max_ = 500
     row,col = random.randint(3,max_),random.randint(3,max_)
 
     for i in range(random.randint(0,row*col)):
