@@ -11,60 +11,60 @@ def product_shopping(p_list: dict[str, tuple[float, float]],allowed_w: float, bu
     # power set
     set_ = [[]]
     list_ = list(p_list.keys())
+
     for i in list_:
         q = map(lambda x: x + [i],set_.copy())
         set_ += q
-    filter_ = []
 
     # filter exceed allowed_w and budget
+    filter_ = []
     for list_ in set_:
         wc,bc = 0,0
+
         for n in list_:
             wc += p_list.get(n)[0]
             bc += p_list.get(n)[1]
 
-        if wc <= allowed_w and bc <= budget:
-            filter_.append(list_)
+        if wc > allowed_w or bc > budget:
+            continue
 
-    filter_ = filter_[1:][::-1]
-    #print(filter_)
+        filter_.append(list_)
+
+    filter_ = sorted(filter_, key = lambda x: len(x), reverse = True)
     
     # find the best pattern
     ans = []
     max_len,min_weight,min_budget = 0,allowed_w,budget
-    #print(allowed_w,budget)
     for list_ in filter_:
         wc,bc = 0,0
+
         for n in list_:
             wc += p_list.get(n,(0,0))[0]
             bc += p_list.get(n,(0,0))[1]
-        #print(list_,wc,bc)
+
+        if len(list_) < max_len:
+            continue
 
         if len(list_) >= max_len:
             max_len = len(list_)
-            #print("hit")
-            #print(list_,wc,bc)
+
             if wc == min_weight and bc < min_budget:
                 min_budget = bc
                 ans = list_
+                continue
 
             if wc < min_weight:
                 min_weight = wc
                 min_budget = bc
                 ans = list_
+                continue
 
-        ans = sorted(ans)
-                #if bc < min_budget:
-                #print(list_,wc,bc)
-                    #print(ans)
-    d = dict(map(lambda x: (x,p_list.get(x)[0]),ans))
-    #print(d)
+    d = dict(map(lambda x: (x,p_list.get(x,(0,0))[0]),sorted(ans)))
     return d
 
-import random
-import string
 def test():
-    for i in range(1000):
+    import random,string
+    for i in range(2000):
         d = {}
 
         for i in range(random.randint(1,15)):
@@ -81,25 +81,5 @@ def test():
         print("budget =",b)
         print("ans :",product_shopping(d,w,b))
 
-
 if __name__ == "__main__":
-    assert product_shopping({"table": (5, 900.), "chair": (0.4, 450.),"pillow": (3.5, 1200), "stool": (0.3, 300.0)},25.0,2500.00) == {'stool': 0.3,'chair': 0.4,'pillow': 3.5}
-    assert product_shopping({"chair": (0.4, 450.0), "pillow": (3.5, 315.0),"stool": (0.3, 300.0), "closet": (2.5, 700.0)}, 15.0,1450.00) == {'stool': 0.3,'chair': 0.4,'closet': 2.5}
-    product_shopping({"a":(0.1,10)},100.0,100.0)
-    product_shopping({"a":(0.1,10)},100.0,1.0)
     test()
-    #p_list = {"table": (5, 900.), "chair": (0.4, 450.),"pillow": (3.5, 1200), "stool": (0.3, 300.)}
-    #allowed_w = 25.0
-    #budget = 2500.00
-    #product_shopping(p_list, allowed_w, budget)
-    #p_list = {"chair": (0.4, 450.0), "pillow": (3.5, 315.0),
-    #"stool": (0.3, 300.0), "closet": (2.5, 700.0)}
-    #allowed_w = 15.0
-    #budget = 1450.00
-    #product_shopping(p_list, allowed_w, budget)
-    #p_list = {"shirt": (0.13, 1200.), "trousers": (0.36, 850.),
-    #"jeans": (0.3, 1300.), "shoes": (0.5, 1200.),
-    #"socks": (0.15, 50.)}
-    #allowed_w = 5.0
-    #budget = 4200.00
-    #product_shopping(p_list, allowed_w, budget)

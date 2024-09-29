@@ -1,4 +1,4 @@
-# row v | col >
+# row > | col v
 print("- making 2d list-")
 def make_2d_list(rows,cols,a = []):
     for row in range(rows):
