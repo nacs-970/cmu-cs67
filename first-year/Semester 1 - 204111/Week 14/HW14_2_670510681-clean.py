@@ -40,6 +40,7 @@ def bottom_up_m_sort(list_x: list[int], show_steps: bool=False) -> None:
             else:
                 bisec.append(right[j]) 
                 j += 1
+    
         if i < len_l:
             bisec.extend(left[i:])
         if j < len_r:

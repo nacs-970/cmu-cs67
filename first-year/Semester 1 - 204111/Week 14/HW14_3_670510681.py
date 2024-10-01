@@ -16,6 +16,7 @@ def radix_word(list_x: list[str],show_steps=False):
 
         # move string to the left
         dict_ = dict(map(lambda x: (str(x),[])," " + string.ascii_letters))
+        #dict_ = dict(map(lambda x: (str(x),[])," " + string.ascii_lowercase))
         
         # sorting
         for j in list_:
@@ -29,7 +30,8 @@ def radix_word(list_x: list[str],show_steps=False):
 
     #return list(map(str.strip,list_))
 if __name__ == "__main__":
-    list_x = ['beer', 'wine', 'vinegar', 'vodka']
+    #list_x = ['beer', 'wine', 'vinegar', 'vodka']
+    list_x = ['bat','ant','beer','rum','wine','candy']
     radix_word(list_x,True)
     print("---")
     print(list_x)

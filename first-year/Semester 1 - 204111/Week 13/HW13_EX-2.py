@@ -65,11 +65,6 @@ def sand_towers(list_a: list[int]) -> str:
             line.append(tower[i])
         result.append("".join(line))
 
-
-
-
-
-
 if __name__ == "__main__":
     sand_towers([9,12,6])
     #sand_towers([4,4,4])
