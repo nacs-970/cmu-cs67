@@ -4,6 +4,13 @@
 # HW14_1
 # 204111 Sec 002
 
+def read_file(filename,mode="rt"):
+    try:
+        with open(filename,mode,encoding="utf-8") as input_:
+            return input_.read()
+    except FileNotFoundError:
+        return None
+
 def append_ranking(infile_name:str='score_in.txt', outfile_name: str='score_out.txt'):
     d = {}
     # making a rank
