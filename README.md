@@ -1,3 +1,3 @@
 # cmu-cs67
-Using pyenv
-Python Version 3.10.12
+- **python**: using pyenv, 3.10.12
+- **java**: 17.0.10
