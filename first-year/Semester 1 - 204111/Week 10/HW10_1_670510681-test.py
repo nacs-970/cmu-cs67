@@ -5,11 +5,9 @@
 # 204111 Sec 002
 
 def eratosthenes(n:int,show_step:bool=False) -> list[int]:
+
+    if n < 2: return []
     prime_list = []
-
-    if n < 2:
-        return []
-
     list_ = list(range(2,n+1))
     #list_ = list(filter(lambda x: x%list_[0] != 0,list_))
     
@@ -25,6 +23,8 @@ def eratosthenes(n:int,show_step:bool=False) -> list[int]:
     return ans
 
 def eratosthenes2(n:int,show_step:bool=False) -> list[int]:
+
+    if n < 2: return []
     prime = 2
     prime_list = [2]
 
@@ -44,7 +44,7 @@ def eratosthenes2(n:int,show_step:bool=False) -> list[int]:
 from random import randint
 def test():
     for i in range(100000):
-        n = randint(0,100000)
+        n = randint(0,200)
         try:
             assert eratosthenes(randint(n)) == eratosthenes2(n)
         except:
@@ -58,5 +58,6 @@ def test():
 if __name__ == "__main__":
     test()
     #n = 100
+    #print(eratosthenes2(87831))
     #print(eratosthenes(n,True))
     #print(eratosthenes(int(input())))

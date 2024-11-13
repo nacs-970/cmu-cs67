@@ -5,6 +5,8 @@
 # 204111 Sec 002
 
 def eratosthenes(n:int,show_step:bool=False) -> list[int]:
+
+    if n < 2: return []
     prime = 2
     prime_list = [2]
 

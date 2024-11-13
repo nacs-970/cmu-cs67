@@ -12,7 +12,8 @@ def median_of_median(list_a: list[float]) -> float:
         return float(sum(list_a) - min(list_a) - max(list_a))
 
     if len(list_a) == 2:
-        return float(median(list_a))
+        #return float(median(list_a))
+        return float(sum(list_a)/2)
 
     if len(list_a) == 1:
         return float(list_a[0])

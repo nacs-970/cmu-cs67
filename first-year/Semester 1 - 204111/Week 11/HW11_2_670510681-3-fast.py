@@ -52,9 +52,9 @@ def split_and_merge(n:int) -> list[str]:
     for i in range(len(top)):
         merge(top[i],bot[i],s)
 
-    #return sorted(s)
+    return sorted(s)
     #return f"{time.time() - start:.07f}"
-    return sorted(s), f"{time.time() - start:.07f}"
+    #return sorted(s), f"{time.time() - start:.07f}"
 if __name__ == "__main__":
     #split_and_merge(11)
     print(split_and_merge(3))

@@ -3,20 +3,23 @@
 # 670510681
 # HW10_1
 # 204111 Sec 002
-
+# not finished
 def eratosthenes(n:int,show_step:bool=False) -> list[int]:
-    prime_list = [2]
+
+    if n < 2: return []
+    prime_list = []
 
     list_ = list(range(2,n+1))
     list_ = list(filter(lambda x: x%list_[0] != 0,list_))
+    prime = list_[0]
     
     #while list_ != []:
-    while list_[0]**2 <= n: # when x can't divied others mean number is less than sqrt(x) mean x is prime
+    while prime**2 <= n: # when x can't divied others mean number is less than sqrt(x) mean x is prime
         #print(prime_list)
-        if show_step: print(f"{list_[0]}: {prime_list+list_}")
-        prime_list.append(list_[0])
+        if show_step: print(f"{prime}: {prime_list+list_}")
+        prime_list.append(prime)
         prime = list_[0]
-        list_ = list(filter(lambda x: x%list_[0] != 0,list_))
+        list_ = list(filter(lambda x: x%prime != 0,list_))
 
     ans = prime_list+list_
     return ans

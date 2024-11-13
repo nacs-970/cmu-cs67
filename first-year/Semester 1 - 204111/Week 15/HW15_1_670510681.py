@@ -4,7 +4,7 @@
 # HW15_1
 # 204111 Sec 002
 
-def  manga_add(manga_shelf: list[tuple[str, int]], new_m:tuple[str, int], show_steps: bool = False) -> None:
+def manga_add(manga_shelf: list[tuple[str, int]], new_m:tuple[str, int], show_steps: bool = False) -> None:
     #manga_shelf[:] = sorted(manga_shelf,key = lambda x: x[1])
     #manga_shelf[:] = sorted(manga_shelf,key = lambda x: x[0])
     lo = 0; hi = len(manga_shelf) - 1
