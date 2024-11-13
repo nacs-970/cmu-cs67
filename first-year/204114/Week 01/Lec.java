@@ -27,6 +27,14 @@ public class Lec {
     float f;
     f = 10/3; System.out.println(f);
     f = 10.0f/3; System.out.println(f); // f = (float)(10.0/3)
+    System.out.println("---");
+
+    System.out.println("Priority");
+    b = 5; a = 10 + (int)b++ * 2;
+    System.out.println("a: "+ a +" b: "+(int)b);
+
+    b = 5; a = 10 + (int)++b * 2;
+    System.out.println("a: "+ a +" b: "+(int)b);
 
     System.out.println("-------------");
   }
