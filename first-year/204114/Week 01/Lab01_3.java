@@ -7,8 +7,8 @@ public class Lab01_3 {
 
     Scanner kb = new Scanner(System.in);
     int size = kb.nextInt();
-    int [] array = new int[size];
 
+    int [] array = new int[size];
     for(int i = 0; i <= size-1; i++){
       array[i] = kb.nextInt();
     }

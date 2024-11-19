@@ -6,6 +6,7 @@ public class Lab01_2 {
 
     Scanner kb = new Scanner(System.in);
     int in = kb.nextInt();
+
     int sum = in, count = 0, remain = 0, change = 0;
 
     if (in >= 5){
