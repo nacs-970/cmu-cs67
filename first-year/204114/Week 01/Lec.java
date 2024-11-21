@@ -3,6 +3,8 @@ import java.util.Arrays;
 
 public class Lec {
 
+  System.out.println("Basic Syntax");
+
   public static void variable() {
     int x = 10;
     System.out.println("This is int x " + x);
