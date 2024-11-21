@@ -1,4 +1,7 @@
-// 670510681 Atithep Thepkij
+/*  Atithep Thepkij (Tun)
+    670510681
+    Lab01_2
+    204114 sec 003 */
 import java.util.*;
 
 public class Lab01_2 {
@@ -6,7 +9,6 @@ public class Lab01_2 {
 
     Scanner kb = new Scanner(System.in);
     int in = kb.nextInt();
-
     int sum = in, count = 0, remain = 0, change = 0;
 
     if (in >= 5){
