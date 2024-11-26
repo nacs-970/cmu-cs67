@@ -3,7 +3,6 @@ import java.util.Arrays;
 
 public class Lec {
 
-  System.out.println("Basic Syntax");
 
   public static void variable() {
     int x = 10;
@@ -120,6 +119,7 @@ public class Lec {
   }
 
   public static void main(String[] args) {
+    System.out.println("Basic Syntax");
     variable();
     input();
     JavaAppEx1();

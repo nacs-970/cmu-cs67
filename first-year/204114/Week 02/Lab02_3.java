@@ -30,7 +30,7 @@ public class Lab02_3 {
       if(check == 1) inside++;
       if(check == 2) border++;
     }
-    System.out.println(inside + " " + border + " " + outside);
+    System.out.printf("%d %d %d\n",inside, border, outside);
   }
   public static int checkBoundary(int[] one, int[] two, int[] three) {
     // 0 not in, 1 in, 2 on Border
