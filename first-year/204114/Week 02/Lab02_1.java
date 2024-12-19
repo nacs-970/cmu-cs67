@@ -18,6 +18,7 @@ public class Lab02_1 {
         else if(Character.isUpperCase(mode)) printStartUp(n, symb);
         else printStartBoth(n, symb);
     }
+
     private static void printStartDown(int n, char symb) {	
       //System.out.println("Down");
       for(int i = 0; i<= n;i++){

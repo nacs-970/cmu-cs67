@@ -10,7 +10,7 @@ public class Lab05_4 {
     GPX student = new GPX();
     int num = kb.nextInt();
     for (int i = 0; i < num; i++) {
-      student.getData(kb.next().charAt(0), kb.nextInt());
+      student.setData(kb.next().charAt(0), kb.nextInt());
       student.calScore();
     }
     student.calGpa();
@@ -28,11 +28,10 @@ class GPX {
     else if(grade == 'B') return 3;
     else if(grade == 'C') return 2;
     else if(grade == 'D') return 1;
-    else if(grade == 'F') return 0;
-    return 0;
+    else return 0;
   }
 
-  public void getData(char grade, int credit) {
+  public void setData(char grade, int credit) {
     this.grade = grade;
     this.credit = credit;
     grade_point = convertGrade();
