@@ -5,11 +5,25 @@
 
 import java.util.Scanner;
 
-public class Lab06_4 {
+public class Lab06_4_not_that_oop {
+    static void deposit(Customer person, int money){
+      person.money += money;
+    }
+
+    static void withdraw(Customer person, int money){
+      if (person.money - money >= 100) person.money -= money;
+    }
+
+    static void transfer(Customer person1, Customer person2, int money){
+      if (person1.money - money >= 100){
+        person1.money -= money;
+        person2.money += money;
+      }
+    }
 
     static Customer findPerson(String compare_id, Customer[] person){
       for (Customer customer : person)
-        if (customer.getId().equals(compare_id)) return customer;
+        if (customer.id.equals(compare_id)) return customer;
       return null;
     }
 
@@ -25,7 +39,7 @@ public class Lab06_4 {
     kb.nextLine();
 
     Transaction transac = new Transaction();
-    Customer checked_person_a, checked_person_b; // init Customer Class
+    Customer checked_person_a = person[0], checked_person_b = person[0]; // init Customer Class
 
     for (int i = 0; i < num_transac; i++) {
       String type = transac.checkType(kb.next().charAt(0));
@@ -33,22 +47,17 @@ public class Lab06_4 {
       String id_a = kb.next();
       checked_person_a = findPerson(id_a, person);
 
-      switch (type) {
-        case "deposit":
-          checked_person_a.deposit(kb.nextInt());
-          break;
-
-        case "withdraw":
-          checked_person_a.withdraw(kb.nextInt());
-          break;
-
-        case "transfer":
-          String id_b = kb.next();
-          checked_person_b = findPerson(id_b, person);
-          checked_person_a.transfer(checked_person_b, kb.nextInt());
-          break;
+      if (type.equals("transfer")){
+        String id_b = kb.next();
+        checked_person_b = findPerson(id_b, person);
       }
+
+      int money = kb.nextInt();
       //kb.nextLine(); // comment when submit grader
+
+      if (type.equals("deposit")) deposit(checked_person_a, money);
+      else if (type.equals("withdraw")) withdraw(checked_person_a, money);
+      else if (type.equals("transfer")) transfer(checked_person_a, checked_person_b, money);
     }
 
     for (int i = 0; i < num_customer; i++) person[i].displayStatus(); 
@@ -56,32 +65,14 @@ public class Lab06_4 {
 }
 
 class Customer {
-  private String id, name;
-  private int money;
+  public String id;
+  private String name;
+  public int money;
 
   Customer(String id, String name, int money){
     this.id = id;
     this.name = name;
     this.money = money;
-  }
-
-  public void deposit(int money){
-    this.money += money;
-  }
-
-  public void withdraw(int money){
-    if (this.money - money >= 100) this.money -= money;
-  }
-
-  public void transfer(Customer person2, int money){
-    if (this.money - money >= 100){
-      this.money -= money;
-      person2.money += money;
-    }
-  }
-
-  public String getId(){
-    return this.id;
   }
 
   public void displayStatus(){
